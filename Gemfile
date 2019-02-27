@@ -24,6 +24,7 @@ group :development, :test do
   gem 'pry-rails'
   gem 'pry-byebug'
   gem 'pry-doc'
+  gem 'rails-controller-testing'
 end
 
 group :development do
@@ -33,6 +34,9 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem "better_errors"
   gem "binding_of_caller"
+  gem 'rubocop', '~> 0.57.2', require: false
+  gem 'rubocop-airbnb'
+  gem 'bullet'
 end
 
 group :test do
@@ -46,3 +50,4 @@ group :production do
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'activerecord-import', '~> 1.0', '>= 1.0.1'
