@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_27_060735) do
+ActiveRecord::Schema.define(version: 2019_02_27_061211) do
 
   create_table "cities", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 2019_02_27_060735) do
     t.integer "energyproduction", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["house_id"], name: "index_energies_on_house_id"
   end
 
   create_table "families", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -38,6 +39,7 @@ ActiveRecord::Schema.define(version: 2019_02_27_060735) do
     t.boolean "has_child", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["city_id"], name: "index_families_on_city_id"
   end
 
 end
